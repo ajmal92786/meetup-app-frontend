@@ -1,12 +1,16 @@
-import useFetch from "../useFetch";
+import { useState } from "react";
+import useFetch from "../hooks/useFetch";
 import EventCard from "./EventCard";
 
 const EventList = () => {
-  // const { data, loading, error } = useFetch(
-  //   "https://meetup-app-backend-eac.vercel.app/events"
-  // );
-  const { data, loading, error } = useFetch("http://localhost:3000/events");
-  console.log(data);
+  const [filterType, setFilterType] = useState("");
+  const { data, loading, error } = useFetch(
+    "https://meetup-app-backend-eac.vercel.app/events"
+  );
+
+  const filteredEvents = data?.events?.filter((event) =>
+    filterType ? event.type.toLowerCase() === filterType : true
+  );
 
   return (
     <>
@@ -18,6 +22,7 @@ const EventList = () => {
             className="form-select w-auto border-0 text-secondary no-outline"
             style={{ fontSize: "0.9rem" }}
             aria-label="Select Event Type"
+            onChange={(e) => setFilterType(e.target.value)}
           >
             <option value="">Select Event Type</option>
             <option value="online">Online</option>
@@ -25,17 +30,21 @@ const EventList = () => {
           </select>
         </div>
 
-        <div className="container mt-2">
-          <div className="row">
-            {data && data.events && data.events.length > 0 ? (
-              data.events.map((event) => (
-                <EventCard key={event._id} event={event} />
-              ))
-            ) : (
-              <p className="">No events found.</p>
-            )}
+        {error && <p>Error in fetching events.</p>}
+        {loading && <p className="mt-3">Loading events...</p>}
+        {data && (
+          <div className="container mt-2">
+            <div className="row">
+              {filteredEvents && filteredEvents.length > 0 ? (
+                filteredEvents.map((event) => (
+                  <EventCard key={event._id} event={event} />
+                ))
+              ) : (
+                <p className="">No events found.</p>
+              )}
+            </div>
           </div>
-        </div>
+        )}
       </div>
     </>
   );

@@ -26,7 +26,7 @@ const formatDateTime = (isoString) => {
 const EventCard = ({ event }) => {
   return (
     <div className="col-md-4">
-      <div className="card m-2 border-0 overflow-hidden mb-4 bg-light position-relative cursor-pointer">
+      <div className="card m-2 border-0 overflow-hidden mb-4 bg-light position-relative event-card">
         <span
           className="py-2 position-absolute top-0 start-0 m-2 badge bg-light text-dark"
           style={{ fontSize: "13px" }}

@@ -3,3 +3,7 @@
   box-shadow: none !important;
   border: none !important;
 }
+
+.event-card:hover { 
+  cursor: pointer; 
+}

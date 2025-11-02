@@ -16,11 +16,11 @@ This frontend connects to the [Meetup Backend API](https://github.com/ajmal92786
 
 #### 🏠 Home Page — All Events
 
-![All Events Page](<img width="1204" height="641" alt="image" src="https://github.com/user-attachments/assets/e53c360e-4a9a-49d3-a048-6c9aab2cb75e" />)
+![All Events Page](https://github.com/user-attachments/assets/e53c360e-4a9a-49d3-a048-6c9aab2cb75e)
 
 #### 🗓️ Event Details Page
 
-![Event Details Page](<img width="1208" height="642" alt="image" src="https://github.com/user-attachments/assets/43c16b1d-a5fe-4370-9653-317eeee9a9a3" />)
+![Event Details Page](https://github.com/user-attachments/assets/43c16b1d-a5fe-4370-9653-317eeee9a9a3)
 
 ---
 

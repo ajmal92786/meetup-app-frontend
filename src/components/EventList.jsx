@@ -4,10 +4,9 @@ import EventCard from "./EventCard";
 
 const EventList = ({ searchTerm }) => {
   const [filterType, setFilterType] = useState("");
-  // const { data, loading, error } = useFetch(
-  //   "https://meetup-app-backend-eac.vercel.app/events"
-  // );
-  const { data, loading, error } = useFetch("http://localhost:3000/events");
+  const { data, loading, error } = useFetch(
+    "https://meetup-app-backend-eac.vercel.app/events"
+  );
 
   const filteredEvents = data?.events
     ?.filter((event) =>

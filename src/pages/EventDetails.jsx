@@ -32,8 +32,11 @@ const formatDateTime = (isoString) => {
 
 const EventDetails = () => {
   const eventId = useParams();
+  // const { data, loading, error } = useFetch(
+  //   `https://meetup-app-backend-eac.vercel.app/events/${eventId.eventId}`
+  // );
   const { data, loading, error } = useFetch(
-    `https://meetup-app-backend-eac.vercel.app/events/${eventId.eventId}`
+    `http://localhost:3000/events/${eventId.eventId}`
   );
 
   return (

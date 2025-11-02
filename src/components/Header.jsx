@@ -1,6 +1,6 @@
 import { IoIosSearch } from "react-icons/io";
 
-const Header = () => {
+const Header = ({ searchTerm, setSearchTerm }) => {
   return (
     <header className="bg-light">
       <nav className="container p-0 pt-3 pb-4 border-bottom d-flex justify-content-between align-items-center">
@@ -22,6 +22,8 @@ const Header = () => {
             placeholder="Search by title and tags..."
             aria-label="Search"
             style={{ fontSize: "0.9rem" }}
+            value={searchTerm}
+            onChange={(e) => setSearchTerm(e.target.value)}
           />
         </div>
       </nav>

@@ -2,15 +2,22 @@ import { useState } from "react";
 import useFetch from "../hooks/useFetch";
 import EventCard from "./EventCard";
 
-const EventList = () => {
+const EventList = ({ searchTerm }) => {
   const [filterType, setFilterType] = useState("");
-  const { data, loading, error } = useFetch(
-    "https://meetup-app-backend-eac.vercel.app/events"
-  );
+  // const { data, loading, error } = useFetch(
+  //   "https://meetup-app-backend-eac.vercel.app/events"
+  // );
+  const { data, loading, error } = useFetch("http://localhost:3000/events");
 
-  const filteredEvents = data?.events?.filter((event) =>
-    filterType ? event.type.toLowerCase() === filterType : true
-  );
+  const filteredEvents = data?.events
+    ?.filter((event) =>
+      filterType ? event.type.toLowerCase() === filterType : true
+    )
+    .filter(
+      (event) =>
+        event.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        event.tags.join(", ").toLowerCase().includes(searchTerm.toLowerCase())
+    );
 
   return (
     <>

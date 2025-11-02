@@ -3,8 +3,12 @@ import { createRoot } from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import "./index.css";
 import App from "./App.jsx";
+import EventDetails from "./pages/EventDetails.jsx";
 
-const router = createBrowserRouter([{ path: "/", element: <App /> }]);
+const router = createBrowserRouter([
+  { path: "/", element: <App /> },
+  { path: "/events/:eventId", element: <EventDetails /> },
+]);
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>

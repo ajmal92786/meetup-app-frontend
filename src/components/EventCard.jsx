@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 const formatDateTime = (isoString) => {
   const date = new Date(isoString);
 
@@ -26,30 +28,32 @@ const formatDateTime = (isoString) => {
 const EventCard = ({ event }) => {
   return (
     <div className="col-md-4">
-      <div className="card m-2 border-0 overflow-hidden mb-4 bg-light position-relative event-card">
-        <span
-          className="py-2 position-absolute top-0 start-0 m-2 badge bg-light text-dark"
-          style={{ fontSize: "13px" }}
-        >
-          {event.type} Event
-        </span>
-
-        <img
-          src={event.thumbnail}
-          alt={event.title}
-          className="card-img-top rounded img-fluid w-100 object-fit-cover"
-          style={{ height: "220px" }}
-        />
-        <div className="card-body p-0">
-          <p
-            className="card-text text-secondary fw-semibold p-0 m-0"
+      <Link to={`/events/${event._id}`} className="text-decoration-none">
+        <div className="card m-2 border-0 overflow-hidden mb-4 bg-light position-relative event-card">
+          <span
+            className="py-2 position-absolute top-0 start-0 m-2 badge bg-light text-dark"
             style={{ fontSize: "13px" }}
           >
-            {formatDateTime(event.startDateTime)} IST
-          </p>
-          <p className="card-text fs-4 fw-bold p-0">{event.title}</p>
+            {event.type} Event
+          </span>
+
+          <img
+            src={event.thumbnail}
+            alt={event.title}
+            className="card-img-top rounded img-fluid w-100 object-fit-cover"
+            style={{ height: "220px" }}
+          />
+          <div className="card-body p-0">
+            <p
+              className="card-text text-secondary fw-semibold p-0 m-0"
+              style={{ fontSize: "13px" }}
+            >
+              {formatDateTime(event.startDateTime)} IST
+            </p>
+            <p className="card-text fs-4 fw-bold p-0">{event.title}</p>
+          </div>
         </div>
-      </div>
+      </Link>
     </div>
   );
 };

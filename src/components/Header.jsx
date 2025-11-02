@@ -19,7 +19,7 @@ const Header = () => {
           <input
             type="text"
             className="form-control border-0 no-outline"
-            placeholder="Search by title and topic..."
+            placeholder="Search by title and tags..."
             aria-label="Search"
             style={{ fontSize: "0.9rem" }}
           />

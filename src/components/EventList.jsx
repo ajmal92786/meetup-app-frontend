@@ -25,12 +25,12 @@ const EventList = ({ searchTerm }) => {
           <h2 className="fw-bold">Meetup Events</h2>
 
           <select
-            className="form-select w-auto border-0 text-secondary no-outline"
-            style={{ fontSize: "0.9rem" }}
+            className="form-select border-0 text-secondary no-outline"
+            style={{ maxWidth: "200px", fontSize: "0.9rem" }}
             aria-label="Select Event Type"
             onChange={(e) => setFilterType(e.target.value)}
           >
-            <option value="">Select Event Type</option>
+            <option value="">Both</option>
             <option value="online">Online</option>
             <option value="offline">Offline</option>
           </select>

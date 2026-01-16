@@ -1,7 +1,14 @@
-## 🖥️ **Meetup App — Frontend**
+## 🖥️ **Meetup App**
 
-A modern and responsive **Meetup Management Web App** built with **React.js**.
-This frontend connects to the [Meetup Backend API](https://github.com/ajmal92786/meetup-app-backend) to display a list of upcoming events and show detailed information for each event — including title, date, speakers, venue, and price.
+Meetup is a **full‑stack meetup web application** that showcases upcoming events and provides detailed information for each event, including title, schedule, speakers, venue, pricing, and other key details.
+
+The project demonstrates clean frontend–backend integration using a **React frontend**, **Node.js/Express backend**, and **MongoDB database**, following a modular and scalable structure.
+
+---
+
+## Demo Link
+
+[Live Demo](https://meetup-app-frontend-eac.vercel.app/)
 
 ---
 
@@ -9,6 +16,17 @@ This frontend connects to the [Meetup Backend API](https://github.com/ajmal92786
 
 - ⚙️ Backend: [Meetup Backend Repo](https://github.com/ajmal92786/meetup-app-backend)
 - 🖥️ Frontend: [Meetup Frontend Repo](https://github.com/ajmal92786/meetup-app-frontend)
+
+---
+
+### 🚀 **Features**
+
+- 📋 Display all upcoming events fetched from backend APIs
+- 🔍 View complete event details (description, venue, speakers, pricing, etc.)
+- 🧭 Dynamic routing using React Router
+- ⚡ API integration using Fetch
+- 🎨 Clean and responsive UI using Bootstrap
+- 🧠 Reusable and modular components for scalability
 
 ---
 
@@ -24,26 +42,19 @@ This frontend connects to the [Meetup Backend API](https://github.com/ajmal92786
 
 ---
 
-### 🚀 **Features**
+## Technologies
 
-- 🧩 Displays all events fetched from backend API
-- 🔍 View event details on click (title, description, venue, speakers, etc.)
-- 🧭 Dynamic routing using React Router
-- ⚡ API integration using Fetch
-- 🎨 Clean, responsive UI (CSS / Bootstrap)
-- 🧠 Modular components for scalability
+**Frontend**
 
----
+- React JS
+- React Router
+- Bootstrap
 
-### 🧠 **Tech Stack**
+**Backend**
 
-| Category               | Technologies           |
-| ---------------------- | ---------------------- |
-| **Frontend Framework** | React.js (Vite)        |
-| **Routing**            | React Router DOM       |
-| **API Handling**       | Fetch API              |
-| **Styling**            | Bootstrap / Custom CSS |
-| **Language**           | JavaScript (ES6+)      |
+- Node.js
+- Express.js
+- MongoDB (Mongoose)
 
 ---
 
@@ -71,33 +82,7 @@ meetup-frontend/
 
 ---
 
-### 🧩 **Routing Setup**
-
-**`src/main.jsx`**
-
-```jsx
-import { StrictMode } from "react";
-import { createRoot } from "react-dom/client";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import "./index.css";
-import App from "./App.jsx";
-import EventDetails from "./pages/EventDetails.jsx";
-
-const router = createBrowserRouter([
-  { path: "/", element: <App /> },
-  { path: "/events/:eventId", element: <EventDetails /> },
-]);
-
-createRoot(document.getElementById("root")).render(
-  <StrictMode>
-    <RouterProvider router={router} />
-  </StrictMode>
-);
-```
-
----
-
-### 💻 **Run Locally**
+### 💻 **Quick Start**
 
 #### 1️⃣ Clone the Repository
 
@@ -123,53 +108,53 @@ Frontend runs on:
 
 ---
 
-### 🧪 **Integration Flow**
+## 🔗 API Reference
 
-1. App fetches events from `/events` endpoint (backend).
-2. Displays them as cards on Home page.
-3. Clicking an event navigates to `/event/:id` and fetches full details.
-4. Data displayed includes title, description, date, venue, speakers, and pricing.
+#### **GET /events**
 
----
+Fetch all events
 
-### 🌈 **Example UI Components**
+Responses:
 
-**EventCard.jsx**
-
-```jsx
-const EventCard = ({ event }) => (
-  <div className="p-4 border rounded-lg shadow hover:shadow-md">
-    <img
-      src={event.thumbnail}
-      alt={event.title}
-      className="rounded-lg w-full h-48 object-cover"
-    />
-    <h3 className="mt-2 text-xl font-semibold">{event.title}</h3>
-    <p className="text-gray-500">{event.date}</p>
-  </div>
-);
+```json
+[
+  {
+    "_id": "eventId",
+    "title": "Tech Conference",
+    "hostedBy": "Tech Innovators",
+    "type": "Offline",
+    "thumbnail": "https://images.unsplash.com/photo",
+    "description": "Stay ahead in the world of technology ...",
+    "startDateTime": "date",
+    "endDateTime": "date",
+    "venue": "Tech City Convention Center",
+    "address": "101 Innovation Drive, City",
+    "price": 2500,
+    "speakers": [
+      {
+        "_id": "id",
+        "name": "Amit Verma",
+        "designation": "CTO, CloudNova",
+        "image": "https://images.unsplash.com/photo"
+      }
+    ],
+    "dressCode": "Business casual",
+    "ageRestriction": "18 and above",
+    "tags": ["technology", "conference", "web"]
+  }
+]
 ```
 
 ---
 
-### 💫 **Future Enhancements**
+#### **GET /events/\*\***:id\*\*
 
-- 🎟️ Add event registration and payment integration
-- 👥 User authentication (login & signup)
-- 💬 Speaker profiles and social links
+Fetch event details by ID
 
 ---
 
-### 👨‍💻 **Author**
+## 📬 Contact
 
-**Mohd Ajmal Raza**
-Full-Stack Developer | React | Node.js | MongoDB | Express
-<br/>
-📧 [ajmalbly27@gmail.com](mailto:ajmalbly27@gmail.com)
-🌐 [GitHub Profile](https://github.com/ajmal92786)
+For bugs or feature request, please reach out to:
 
----
-
-### 🏁 **License**
-
-This project is licensed under the [MIT License](LICENSE).
+📧 **[ajmalbly27@gmail.com](mailto:ajmalbly27@gmail.com)**

@@ -84,14 +84,14 @@ meetup-frontend/
 
 ### 🔐 Environment Setup
 
-#### Frontend Environment Variables
-
 Create a .env file in the frontend root directory:
+
 ```
 VITE_API_BASE_URL=https://meetup-app-backend-eac.vercel.app/
 ```
 
 ---
+
 ### 💻 **Quick Start**
 
 #### 1️⃣ Clone the Repository

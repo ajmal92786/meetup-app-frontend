@@ -21,12 +21,12 @@ The project demonstrates clean frontend–backend integration using a **React fr
 
 ### 🚀 **Features**
 
-- 📋 Display all upcoming events fetched from backend APIs
-- 🔍 View complete event details (description, venue, speakers, pricing, etc.)
-- 🧭 Dynamic routing using React Router
-- ⚡ API integration using Fetch
-- 🎨 Clean and responsive UI using Bootstrap
-- 🧠 Reusable and modular components for scalability
+- 📋 Displays upcoming events fetched from backend APIs
+- 🔍 Shows detailed event information (description, venue, speakers, pricing)
+- 🧭 Enables dynamic routing using React Router
+- ⚡ Integrates backend APIs using Fetch
+- 🎨 Renders a clean and responsive UI using Bootstrap
+- 🧠 Uses reusable and modular components for scalability
 
 ---
 
@@ -82,6 +82,16 @@ meetup-frontend/
 
 ---
 
+### 🔐 Environment Setup
+
+#### Frontend Environment Variables
+
+Create a .env file in the frontend root directory:
+```
+VITE_API_BASE_URL=https://meetup-app-backend-eac.vercel.app/
+```
+
+---
 ### 💻 **Quick Start**
 
 #### 1️⃣ Clone the Repository
